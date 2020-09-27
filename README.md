@@ -1,4 +1,4 @@
-# run-buddy
+# Run-Buddy Inc.
 
 ##Purpose
 A website that offers fitness training services.
@@ -11,4 +11,4 @@ A website that offers fitness training services.
 https://amiedawn.github.io/run-buddy/
 
 ## Contribution
-Made with love by Amie
+Made with ❤️ by Amie Carroll
