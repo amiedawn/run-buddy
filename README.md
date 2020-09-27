@@ -12,3 +12,5 @@ https://amiedawn.github.io/run-buddy/
 
 ## Contribution
 Made with ❤️ by Amie Carroll
+
+### &copy2019 Run Buddy, Inc
