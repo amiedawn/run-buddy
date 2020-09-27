@@ -1,14 +1,16 @@
-# run-buddy
+# Run Buddy, Inc
 
-##Purpose
-A website that offers fitness training services.
+## Purpose
+A website that offers fitness training services. 
 
 ## Built With
-*HTML
-*CSS
+* HTML
+* CSS
 
 ## Website
 https://amiedawn.github.io/run-buddy/
 
 ## Contribution
-Made with love by Amie
+Made with ❤️ by [Amie Carroll]
+
+### ©️2019 Run Buddy, Inc 
