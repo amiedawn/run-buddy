@@ -8,6 +8,7 @@ cd *{
 header {
     padding: 20px 35px;
     background-color: #39a6b2;
+    display: flex;
   }
 
 header a {
@@ -16,7 +17,6 @@ header a {
 }
 
 header nav {
-    float: right;
     margin: 7px 0;
 }
 
@@ -34,8 +34,7 @@ header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
-    margin: 0;
-    display: inline;
+    margin: 0;    
 }
 
 header h1 {
@@ -103,7 +102,7 @@ section {
     padding: 7px 15px;
     font-size: 16px;
     color: #024e76;
-    width: 100%;
+    width: 90%;
     margin-bottom: 15px;
 }
 /* HERO STYLES END */
