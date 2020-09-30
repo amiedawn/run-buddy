@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* apply styles to <header> */
+/* header styles start */
 header {
     display: flex; 
     padding: 20px 35px;
@@ -34,24 +34,19 @@ header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
-    margin: 0;    
+    margin: 0;  
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
 }
-
-header h1 {
-    font-weight: bold;
-    font-size: 36px;
-    color: #fce138;
-    margin: 0;
-  }
+/* header styles end */  
 
 body {
-    /* more on this crazy alphanumerical value in a minute! */
     color: #39a6b2;
     font-family: Helvetica, Arial, sans-serif;
   }
@@ -84,6 +79,7 @@ section {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form {
