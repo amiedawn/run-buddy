@@ -19,33 +19,15 @@ header {
     background-position: center;
     background-attachment: fixed;
     background-position: 80%;
+    z-index: 9999;   /* keeps header at forefront when scrolling through page */
 }
 
-header a {
+header a {  
     text-decoration: none;
     color: #fce138;
 }
 
-header nav {
-    margin: 7px 0;
-}
-
-header nav ul {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-}
-
-header nav ul li a {
-    padding: 10px 15px;
-    font-weight: lighter;
-    font-size: 1.55vw;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-header h1 {
+header h1 {   /* "RUN BUDDY in header */
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
@@ -53,20 +35,30 @@ header h1 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
 }
 
-header nav ul li a:hover {
+header nav {   /* menu in header */
+    margin: 7px 0;
+}
+
+header nav ul {  /* placement of menu in header */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li a {  /* formatting of menu in header */
+    padding: 10px 15px;
+    font-weight: lighter;
+    font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {  /* highlights the title with new color when hovering */
     background: #fce138;
     color: #024e76;
     border-radius: 15px;
     text-shadow: none;
-}
-
-.hero-form button:hover {
-    background-color: #39a6b2;
-}
-
-.contact-form button:hover {
-    color: #fce138;
-    background: #39a6b2;
 }
 /* header styles end */  
 
@@ -92,7 +84,7 @@ section {
     background-position: 80%;
 }
 
-.hero-cta {
+.hero-cta {  /*CTA (Call to Action) text */
     width: 35%;
     text-align: right;
     margin: 3.5%;
@@ -101,7 +93,7 @@ section {
     line-height: 1.2;
 }
 
-.hero-cta h2 {
+.hero-cta h2 {   /* Start Building Habits heading */
     font-style: italic;
     font-size: 55px;
     color: #fce138;
@@ -118,20 +110,20 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.hero-form h3 {
+.hero-form h3 {   /* hero form heading */
     font-size: 24px;
     margin: 0;
 }
 
-.hero-form p {
+.hero-form p {  /* hero form text */
     margin: 5px 0 15px 0;
 }
 
-.hero-form label {
+.hero-form label {  /* hero form input box labels */
     margin: 0 5px;
 }
 
-.hero-form button {
+.hero-form button {  /* hero form get running button */
     color: #fce138;
     background-color: #024e76;
     border: none;
@@ -140,7 +132,11 @@ section {
     border-radius: 10px;
 }
 
-.form-input {
+.hero-form button:hover {  /* highlights the button with new color when hovering */
+    background-color: #39a6b2;
+}
+
+.form-input {   /* hero form input boxes formatting and placement */
     border: 1px solid #024e76;
     display: block;
     padding: 7px 15px;
@@ -152,33 +148,87 @@ section {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-.form-input:focus {
+.form-input:focus { /* makes input background solid white when selected */
     background-color: rgba(255, 255, 255, 1);
-    outline: none;
+    outline: none; /* takes away straight corners around input field */
 }
 
+.checkbox-wrapper input, .radio-wrapper input {  /* makes original checkbox and radio buttons invisible */
+    opacity: 0;
+}
 
+.checkbox-wrapper label, .radio-wrapper label {  /* preps <label> elements so the new buttons can fit inside */
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before { /* displays the custom checkbox and radio buttons */
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #024e76;
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.checkbox-wrapper label::after {   /* makes custom checkmark to show the box has been selected */
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid #024e76;
+    border-bottom: 2px solid #024e76;
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+}
+
+.radio-wrapper label::before {  /* makes custom radio button a circle instead of square default */
+    border-radius: 50%;
+}
+
+.radio-wrapper label::after {  /* makes custom radio button selected circle */
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #024e76;
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, #39a6b2, #024e76);
+}
+
+/* by using the next 2 rules, the custom checkbox and radio buttons will work as they are supposed to */
+.checkbox-wrapper input + label::after, .radio-wrapper input + label::after { 
+    content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, .radio-wrapper input:checked + label::after {
+    content: "";
+}
 /* HERO STYLES END */
 
-.intro h2 {
-     /* add this alongside your other declarations */
-     display: inline-block;
+/* What We Do style start */
+.intro h2 {              /* what we do heading */
+    display: inline-block;
 }
 
-.intro p {
+.intro p {               /* what we do text */
     line-height: 1.7;
     color: #39a6b2;
     width: 80%;
     font-size: 20px;
     text-align: center;
-}
-
-.intro p {
-    /* add this alongside your other declarations */
     margin: 0 auto;
 }
+/* What We do style end */
 
-/* Steps styling begins */
+/* "What You Do" Steps styling begins */
 .steps {
     background: #fce138;
 }
@@ -191,11 +241,11 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid #39a6b2;  /* makes line between each step */
 }
 
 .step:last-child {
-    border-bottom: none;
+    border-bottom: none; /* removes line after last step */
 }
 
 .step h3 {
@@ -234,7 +284,7 @@ section {
     line-height: 1.5;
     color: #024e76;
 }
-/* Steps styling end */
+/* "What You Do" Steps styling end */
 
 
 .section-title {
@@ -300,8 +350,7 @@ section {
     background: lightyellow;
     width: 80%;
     display: grid;
-    /* repeat (iterator, size) */
-    grid-template-columns: 1fr repeat(2, 4fr);
+    grid-template-columns: 1fr repeat(2, 4fr);  /* repeat (iterator, size) */
     grid-template-rows: repeat(5, 1fr) 2fr;
     border: 2px solid #024e76;
     color: #024e76;
@@ -347,7 +396,6 @@ section {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
  /* service grid end */
 
 /* REACH OUT STYLES START */
@@ -426,8 +474,13 @@ section {
     border-radius: 10px;
 }
 
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+}
 /* REACH OUT STYLES END */
 
+/* footer styles start */
 footer {
     background: #fce138;
     width: 100%;
@@ -451,6 +504,7 @@ footer div {
 footer a {
     color: #024e76;
 }
+/* footer styles end */
 
 .text-left {
     text-align: left;
