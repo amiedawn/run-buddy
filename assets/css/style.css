@@ -6,7 +6,7 @@
 
 :root {
     --primary-color: #fce138;
-    --secondary-color: #024e76;
+    --secondary-color: #024f79;
     --tertiary-color: #39a6b2;
 }
 
@@ -206,7 +206,7 @@ section {
     position: absolute;
     left: -29px;
     top: -3px;
-    background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+  /*  background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color)); */
 }
 
 /* by using the next 2 rules, the custom checkbox and radio buttons will work as they are supposed to */
@@ -316,26 +316,48 @@ section {
     margin: 20px;
     background: var(--secondary-color);
     color: var(--primary-color);
-    flex: 1;
+    flex: 1; 
 }
 
 .trainer-img {
     width: 100%;
     min-height: 300px;
+    background-size: cover;
     display: flex;
     padding: 15px;
     align-items: flex-end;
-    position: absolute;
+    transition: 0.5s;
 }
 
 .trainer-img::after {
     content: "";
     height: 100%;
-    width: 100%;
-    background: rgba(252, 225, 56, 0.3);
+    width: 100%; 
+    /* background: rgba(252, 225, 56, 0.3); */ /* move this to .trainer-1, .trainer-2, and .trainer-3 */
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    transition-property: transform;
+    transition-duration: .5s;
+}
+
+.trainer-img:hover::after { /*guessing*/
+    opacity: 1;
+   /* transform: */
+}
+
+.trainer-img h3 { /* make header visible over gradient */
+    position: relative;
+    z-index: 1;
+    font-size: 28px;
+    margin-bottom: 5px; 
+}
+
+.trainer-img h4 {  /* make header visible over gradient */
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
 }
 
 .trainer-bio {
@@ -365,16 +387,16 @@ section {
     justify-content: space-around;
 }
 
-.trainer-1 {
-    background-image: url("../images/trainer-1.jpg");
+.trainer-1 {   /* linear gradient from top to bottom, yellow to navy) */
+    background-image: linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-1.jpg");
 }
 
 .trainer-2 {
-    background-image: url("./assets/images/trainer-2.jpg");
+    background-image: linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-2.jpg");
 }
 
 .trainer-3 {
-    background-image: url("./assets/images/trainer-2.jpg");
+    background-image: linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-3.jpg");
 }
 /* Trainer styling end */
 
