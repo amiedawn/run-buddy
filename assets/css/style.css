@@ -312,14 +312,15 @@ section {
 }
 
 /* Trainer styling begin */
-.trainer {
+.trainer { 
     margin: 20px;
     background: var(--secondary-color);
     color: var(--primary-color);
     flex: 1; 
 }
 
-.trainer-img {
+.trainer-img { 
+    position: relative; /*new */
     width: 100%;
     min-height: 300px;
     background-size: cover;
@@ -327,38 +328,77 @@ section {
     padding: 15px;
     align-items: flex-end;
     transition: 0.5s;
+    overflow: hidden; /* makes h3 and h4 slide up, but not show over bio */
 }
 
 .trainer-img::after {
     content: "";
     height: 100%;
     width: 100%; 
-    /* background: rgba(252, 225, 56, 0.3); */ /* move this to .trainer-1, .trainer-2, and .trainer-3 */
+    /*background: rgba(252, 225, 56, 0.3); */ /* move this to .trainer-1, .trainer-2, and .trainer-3 */
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-    transition-property: transform;
-    transition-duration: .5s;
+    transition: 0.5s;
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color)); /* new */
 }
 
-.trainer-img:hover::after { /*guessing*/
-    opacity: 1;
-   /* transform: */
+.trainer-1::after { /*duplicate guess*/
+    content: "";
+ height: 100%;
+    width: 100%; 
+    /*background: rgba(252, 225, 56, 0.3); */ /* move this to .trainer-1, .trainer-2, and .trainer-3 */
+    position: absolute;
+    top: 0;
+    left: 0; 
+    opacity: 0;
+    transition: 0.5s;
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color)); /* new */
 }
 
+
+.trainer:hover::after {
+    background-image: linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5)); 
+}
+
+
+
+.trainer-img:hover::after { /*guessing*/  
+    opacity: .7;  /* directions say opacity should be 1 */   
+ /*  linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5));                          
+/*   /* transform: */                             
+}                     
+
+.trainer-1:hover::after { /*guessing*/  /*duplicate guess*/
+    opacity: .7;  /* directions say opacity should be 1 */   
+ /*  linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5));                          
+/*   /* transform: */                             
+}
+
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+    top: 0;
+}
+
+.trainer:hover .trainer-1 h3, .trainer:hover .trainer-1 h4 { /*duplicate guess*/
+    top: 0;
+}
 .trainer-img h3 { /* make header visible over gradient */
-    position: relative;
+    position: relative; 
     z-index: 1;
+    top: 200px; /*so h3 is moved to the bottom of the card until mouse hovers */
+    transition: 0.5s;
     font-size: 28px;
     margin-bottom: 5px; 
 }
 
 .trainer-img h4 {  /* make header visible over gradient */
-    position: relative;
+    position: relative;  
     z-index: 1;
-    font-size: 22px;
-}
+    font-size: 22px; 
+    top: 200px;  /*so h4 is moved to the bottom of the card until mouse hovers */
+    transition: 0.5s;
+}  
 
 .trainer-bio {
     padding: 25px;
@@ -388,16 +428,20 @@ section {
 }
 
 .trainer-1 {   /* linear gradient from top to bottom, yellow to navy) */
-    background-image: linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-1.jpg");
+    background-image: /*linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5)), */ url("../images/trainer-1.jpg");
 }
 
 .trainer-2 {
-    background-image: linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-2.jpg");
+    background-image: /*linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), */url("../images/trainer-2.jpg");
 }
 
 .trainer-3 {
-    background-image: linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), url("../images/trainer-3.jpg");
+    background-image: /*linear-gradient(to bottom, rgba(252, 225, 56, 0.5), rgba(1, 31, 47, 0.5)), */url("../images/trainer-3.jpg");
 }
+
+/* .trainer-1:hover {
+    linear-gradient(to bottom, rgb(167, 153, 64, 0.5), rgba(1, 31, 47, 0.5));
+} */
 /* Trainer styling end */
 
 /* service grid styles begin */
