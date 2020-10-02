@@ -382,12 +382,14 @@ section {
 
 .trainer-bio h3 {
     font-size: 28px;
+    display: none; /*make the trainer name and role disappear in the bio section */
 }
 
 .trainer-bio h4 {
     font-weight: lighter;
     font-size: 22px;
     margin-bottom: 15px;
+    display: none; /*make the trainer name and role disappear in the bio section */
 }
 
 .trainer-bio p {
@@ -639,6 +641,14 @@ footer a {
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
+    .trainer-img::after, .trainer-img h3, .trainer-img h4 { /* adding this so that gradient and headers don't scroll in for mobile */
+        display: none;
+    }
+    
+    .trainer-bio h3, .trainer-bio h4 {
+        display: block;
+    }
+
     section {
         padding: 30px 15px;
     }
